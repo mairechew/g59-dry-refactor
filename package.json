@@ -1,0 +1,33 @@
+{
+  "name": "g59-dry-refactor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "ava --verbose --serial",
+    "knex": "knex",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gSchool/g59-dry-refactor.git"
+  },
+  "author": "Dan Levy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gSchool/g59-dry-refactor/issues"
+  },
+  "homepage": "https://github.com/gSchool/g59-dry-refactor#readme",
+  "dependencies": {
+    "ava": "^0.23.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "knex": "^0.14.1",
+    "monk": "^6.0.5",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "sqlite3": "^3.1.13",
+    "supertest": "^3.0.0"
+  }
+}
