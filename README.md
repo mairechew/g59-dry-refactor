@@ -1,5 +1,6 @@
 # g59 DRY Refactor
 
+[![Build Status](https://travis-ci.org/gSchool/g59-dry-refactor.svg?branch=master)](https://travis-ci.org/gSchool/g59-dry-refactor)
 
 ### TODO
 
