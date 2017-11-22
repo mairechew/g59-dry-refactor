@@ -19,9 +19,9 @@ router.get('/:id', (req, res, next) => {
 
   knex('books')
   .select('id', 'title', 'author', 'genre', 'description', 'cover_url as coverUrl', 'created_at as createdAt', 'updated_at as updatedAt')
-  .where('id', req.params.id)
+  // .where('id', req.params.id)
   .first()
-  .then(data => {
+  .then((data) => {
     res.send(data)
   })
   .catch(err => {
@@ -99,6 +99,9 @@ router.delete('/:id', (req, res, next) => {
     .del()
     .where('id', req.params.id)
     .catch(err => res.status(500).send(err))
+    .then(data => {
+      res.status(200).send({deleted: data})
+    })
 })
 
 module.exports = router

@@ -6,12 +6,12 @@ const cors        = require('cors')
 module.exports = function getAppInstance(logging = true) {
   const app = express()
   app.use(bodyParser.json())
-  app.use(bodyParser.urlencoded({ extended: false }))
+  app.use(bodyParser.urlencoded({extended: false}))
   app.use(cors({origin: true}))
   if (logging) app.use(morgan('dev'))
 
-  app.get('/', (req, res) => { res.send({message: 'HAL 9000 says welcome!'}) })
   // ADD (MOUNT) YOUR MIDDLEWARE (ROUTES) HERE
+  app.get('/', (req, res) => { res.send({message: 'HAL 9000 says welcome!'}) })
   app.use('/books', require('./routes/books'))
 
   app.use(notFound)
