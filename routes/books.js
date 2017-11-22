@@ -18,7 +18,7 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   create(req.body, '*')
-    .then(books => res.send(books[0]))
+    .then(book => res.send(book))
     .catch(err => res.status(500).send(err))
 })
 
