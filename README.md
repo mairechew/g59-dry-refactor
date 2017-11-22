@@ -1,4 +1,19 @@
-# g59-dry-refactor
+# g59 DRY Refactor
 
-[Solution Branch](https://github.com/gSchool/g59-dry-refactor/tree/solution)
 
+### TODO
+
+1. Refactor `routes/books.js`
+1. Follow DRY, Single Purpose, and always `return`
+1. Submit PR
+
+```sh
+npm install
+
+# run this town
+npm start
+
+# run this test
+npm test
+
+```

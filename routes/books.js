@@ -1,7 +1,7 @@
 const knex = require('../lib/knex')
 const express = require('express')
 const router = express.Router()
-const {find, deleteById, validateId} = require('../lib/books')
+const {find, create, deleteById, validateId} = require('../lib/books')
 
 router.get('/', (req, res, next) => {
   find()
@@ -19,20 +19,9 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   // Make sure that the information that you want is in the request body.
-  knex('books')
-    .insert({
-      title: req.body.title,
-      author: req.body.author,
-      genre: req.body.genre,
-      description: req.body.description,
-      cover_url: req.body.coverUrl,
-    }, '*')
-    .then(([bookId]) => {
-      res.send({bookId})
-    })
-    .catch(err => {
-      next(err)
-    })
+  create(req.body, '*')
+    .then(books => res.send(books[0]))
+    .catch(err => next(err))
 })
 
 router.patch('/:id', (req, res, next) => {
@@ -87,6 +76,7 @@ router.delete('/:id', (req, res, next) => {
       }
       return book
     })
+    .then(data => res.send(data))
     .catch(err => res.status(500).send(err))
 })
 
